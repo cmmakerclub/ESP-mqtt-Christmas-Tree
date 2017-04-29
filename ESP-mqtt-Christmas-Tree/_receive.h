@@ -42,8 +42,7 @@ void rainbowCycle(uint8_t wait, int count) {
 
 void clearStrip() {
   uint16_t i, j;
-
-  for (j = 0; j < 256 * 2; j++) { // 5 cycles of all colors on wheel
+  for (j = 0; j < 256 * 1; j++) { // 5 cycles of all colors on wheel
     for (i = 0; i < strip.numPixels(); i++) {
       strip.setPixelColor(i, 0);
     }
@@ -79,8 +78,6 @@ void register_receive_hooks() {
         screen = 4;
       } else if (payload == "RGBALL") {
         screen = 5;
-      } else {
-        screen = 6;
       }
     }
     else if (cmd == "$/reboot") {
